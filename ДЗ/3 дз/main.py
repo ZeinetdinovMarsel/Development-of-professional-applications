@@ -1,11 +1,10 @@
-import time
-import datetime
 import random
+import time
 
 
 class Convertor:
-    def __init__(self, UTC):
-        self.UTC=UTC
+    def __init__(self, utc):
+        self.utc = utc
 
         self.timestamp_seconds = 0
         self.real_second = 0
@@ -63,22 +62,22 @@ class Convertor:
 
         self.timestamp_minutes = int(self.timestamp_seconds / 60)
         self.real_minute = int(self.timestamp_minutes % 60)
-        
+
         if self.real_second == 60:
             self.real_second = 0
             self.real_minute += 1
 
         self.timestamp_hours = int(self.timestamp_seconds / 3600)
-        self.real_hour = int(self.timestamp_hours % 24) + self.UTC
-        
-        if self.real_minute  == 60:
+        self.real_hour = int(self.timestamp_hours % 24) + self.utc
+
+        if self.real_minute == 60:
             self.real_minute = 0
             self.real_hour += 1
 
         self.timestamp_days = int(self.timestamp_seconds / 3600 / 24)
         self.real_day = self.timestamp_days
-        
-        if self.real_hour  == 24:
+
+        if self.real_hour == 24:
             self.real_hour = 0
             self.real_day += 1
 
@@ -151,4 +150,3 @@ if __name__ == '__main__':
         arr[i] = int(arr[i])
 
     print(minim(arr), minim0(arr), minim1(arr))
-
