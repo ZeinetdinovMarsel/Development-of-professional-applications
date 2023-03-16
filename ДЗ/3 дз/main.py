@@ -4,7 +4,9 @@ import random
 
 
 class Convertor:
-    def __init__(self):
+    def __init__(self, UTC):
+        self.UTC=UTC
+
         self.timestamp_seconds = 0
         self.real_second = 0
 
@@ -61,12 +63,24 @@ class Convertor:
 
         self.timestamp_minutes = int(self.timestamp_seconds / 60)
         self.real_minute = int(self.timestamp_minutes % 60)
+        
+        if self.real_second == 60:
+            self.real_second = 0
+            self.real_minute += 1
 
         self.timestamp_hours = int(self.timestamp_seconds / 3600)
-        self.real_hour = int(self.timestamp_hours % 60)
+        self.real_hour = int(self.timestamp_hours % 24) + self.UTC
+        
+        if self.real_minute  == 60:
+            self.real_minute = 0
+            self.real_hour += 1
 
         self.timestamp_days = int(self.timestamp_seconds / 3600 / 24)
         self.real_day = self.timestamp_days
+        
+        if self.real_hour  == 24:
+            self.real_hour = 0
+            self.real_day += 1
 
         return self.fix_format(self.real_hour) + ":" + self.fix_format(self.real_minute) + ":" + self.fix_format(
             self.real_second)
@@ -124,12 +138,12 @@ def generate_new_arr():
 
 
 if __name__ == '__main__':
-    a = Convertor()
+    a = Convertor(4)
     for j in range(1, 10):
         timestamp_seconds = time.time()
         a.update_timestamp(timestamp_seconds)
         a.print_date()
-        # time.sleep(1)
+        time.sleep(1)
     # generate_new_arr()
     with open("out.txt", "r") as out:
         arr = out.read().split()
