@@ -38,7 +38,7 @@ class MyTable(Model):
         return result
 
 
-class Page(object):
+class IndexPage(object):
 
     def __init__(self, columns, data):
         self.columns = columns
@@ -128,13 +128,13 @@ def table_style(strings):
 if __name__ == '__main__':
     table = MyTable()
     # table.Add("19.05.2023 16:56:00", 1656, "lab6test")
-    table.Update(5, "31.12.2023 23:59:59", 9999, "santas stick")
+    # table.Update(5, "31.12.2023 23:59:59", 9999, "santas stick")
 
     columns = table.getColumn()
     lines = table.getStrings()
 
     table_line = table_style(lines)
 
-    cherrypy.quickstart(Page(columns, table_line))
+    cherrypy.quickstart(IndexPage(columns, table_line))
 
     db.close()
