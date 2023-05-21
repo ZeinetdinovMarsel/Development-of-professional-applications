@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Товары</h2>
+<table>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Название товара</th>
+        <th>Действие</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for item in items %}
+    <tr>
+        <td>{{ item.id }}</td>
+        <td>{{ item.name }}</td>
+        <td>
+            <a class="btn" href="{% url 'item_update' item.pk %}">Изменить</a>
+            <a class="btn" href="{% url 'item_delete' item.pk %}">Удалить</a>
+        </td>
+    </tr>
+    {% empty %}
+    <tr>
+        <td colspan="5">Таблица пустая</td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+<hr>
+<h3>Добавить новый товар</h3>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Добавить</button>
+</form>
+{% endblock %}

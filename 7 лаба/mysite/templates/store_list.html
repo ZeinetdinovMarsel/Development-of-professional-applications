@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Магазины</h2>
+<table>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Название</th>
+        <th>Адрес</th>
+        <th>Действие</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for store in stores %}
+    <tr>
+        <td>{{ store.id }}</td>
+        <td>{{ store.name }}</td>
+        <td>{{ store.address }}</td>
+        <td>
+            <a class="btn" href="{% url 'store_update' store.pk %}">Изменить</a>
+            <a class="btn" href="{% url 'store_delete' store.pk %}">Удалить</a>
+        </td>
+    </tr>
+    {% empty %}
+    <tr>
+        <td colspan="5">Таблица пустая</td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+<hr>
+<h3>Добавить новый магазин</h3>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Добавить</button>
+</form>
+{% endblock %}
