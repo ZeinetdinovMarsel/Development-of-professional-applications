@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="28eebd86-9ca2-4bf3-9e2b-83cc782c260b" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/Django Getting Started/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Django Getting Started/.idea/Django Getting Started.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Django Getting Started/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Django Getting Started/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Django Getting Started/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Django Getting Started/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Django Getting Started/mysite/db.sqlite3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Django Getting Started/mysite/manage.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Django Getting Started/mysite/mysite/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Django Getting Started/mysite/mysite/asgi.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Django Getting Started/mysite/mysite/settings.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Django Getting Started/mysite/mysite/urls.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Django Getting Started/mysite/mysite/wsgi.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Django Getting Started/mysite/polls/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Django Getting Started/mysite/polls/admin.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Django Getting Started/mysite/polls/apps.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Django Getting Started/mysite/polls/migrations/0001_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Django Getting Started/mysite/polls/migrations/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Django Getting Started/mysite/polls/models.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Django Getting Started/mysite/polls/static/polls/images/1674777733_top-fon-com-p-cherno-zheltii-fon-dlya-prezentatsii-93.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Django Getting Started/mysite/polls/static/polls/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Django Getting Started/mysite/polls/templates/polls/detail.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Django Getting Started/mysite/polls/templates/polls/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Django Getting Started/mysite/polls/templates/polls/results.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Django Getting Started/mysite/polls/tests.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Django Getting Started/mysite/polls/urls.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Django Getting Started/mysite/polls/views.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Django Getting Started/mysite/templates/admin/base_site.html" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="2Q6jcJ8opvoQIxqGgxa8lS2YWNw" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "//wsl$/Ubuntu/home/harambe/reps/Development-of-professional-applications/7 лаба",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="28eebd86-9ca2-4bf3-9e2b-83cc782c260b" name="Changes" comment="" />
+      <created>1684681004390</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1684681004390</updated>
+      <workItem from="1684681005381" duration="13000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
