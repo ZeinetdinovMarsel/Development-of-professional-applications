@@ -192,7 +192,12 @@ table {
     animation: animateTable 1s ease;
 }
 
-/* Стиль формы */
+
+form label {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
 form {
     max-width: 600px;
     margin: 50px auto;
@@ -210,7 +215,7 @@ form h2 {
 }
 
 /* Стиль полей формы */
-form input[type=text], form input[type=email], form textarea {
+form input[type=text], form input[type=email], form textarea, form select, form input[type="datetime-local"],form input[type="number"],form input[type="password"]{
     width: 100%;
     padding: 12px;
     border: 1px solid #ccc;
@@ -235,13 +240,6 @@ form input[type=submit] {
 form input[type=submit]:hover {
     background-color: #45a049;
 }
-
-/* Стиль сообщения об успешной отправке формы */
-.success-message {
-    color: #4CAF50;
-    margin-top: 20px;
-}
-
 
 .box {
     position: relative;

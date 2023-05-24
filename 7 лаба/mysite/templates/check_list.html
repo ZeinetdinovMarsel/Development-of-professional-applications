@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
+ {% if request.user.is_authenticated %}
 <h2>Чеки</h2>
 <table>
     <thead>
@@ -10,7 +11,9 @@
         <th>Магазин</th>
         <th>Время и дата</th>
         <th>Общее количество</th>
+        {% if request.user.is_staff == True %}
         <th>Действие</th>
+        {% endif %}
     </tr>
     </thead>
     <tbody>
@@ -21,10 +24,12 @@
         <td>{{ check.store.name }}</td>
         <td>{{ check.date_time|date:'Y-m-d H:i' }}</td>
         <td>{{ check.total_sum }}</td>
+        {% if request.user.is_staff == True %}
         <td>
             <a class="btn" href="{% url 'check_update' check.pk %}">Изменить</a>
             <a class="btn" href="{% url 'check_delete' check.pk %}">Удалить</a>
         </td>
+        {% endif %}
     </tr>
     {% empty %}
     <tr>
@@ -34,11 +39,16 @@
     </tbody>
 </table>
 <hr>
+{% if request.user.is_staff == True %}
 <h3>Добавить новый чек</h3>
 <form method="post">
     {% csrf_token %}
     {{ form.as_p }}
     <button type="submit">Добавить</button>
 </form>
+{% endif %}
+{% else %}
+    <h1>Вы не авторизованы!</h1>
+    {% endif %}
 {% endblock %}
 

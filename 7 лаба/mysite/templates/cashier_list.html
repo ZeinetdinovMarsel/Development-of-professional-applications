@@ -1,6 +1,8 @@
 {% extends 'base.html' %}
 
 {% block content %}
+{% if request.user.is_authenticated %}
+
 <h2>Кассиры</h2>
 <table>
     <thead>
@@ -8,7 +10,9 @@
         <th>ID</th>
         <th>Имя</th>
         <th>Номер телефона</th>
+        {% if request.user.is_staff == True %}
         <th>Действие</th>
+        {% endif %}
     </tr>
     </thead>
     <tbody>
@@ -17,10 +21,12 @@
         <td>{{ cashier.id }}</td>
         <td>{{ cashier.name }}</td>
         <td>{{ cashier.phone_number }}</td>
+        {% if request.user.is_staff == True %}
         <td>
             <a class="btn" href="{% url 'cashier_update' cashier.pk %}">Изменить</a>
             <a class="btn" href="{% url 'cashier_delete' cashier.pk %}">Удалить</a>
         </td>
+        {% endif %}
     </tr>
     {% empty %}
     <tr>
@@ -30,10 +36,15 @@
     </tbody>
 </table>
 <hr>
+{% if request.user.is_staff == True %}
 <h3>Добавить нового кассира</h3>
 <form method="post">
     {% csrf_token %}
     {{ form.as_p }}
     <button type="submit">Добавить</button>
 </form>
+{% endif %}
+{% else %}
+<h1>Вы не авторизованы!</h1>
+{% endif %}
 {% endblock %}

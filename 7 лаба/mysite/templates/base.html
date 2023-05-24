@@ -10,17 +10,29 @@
     <a href="/" class="navbar-logo">7 - 8 лабораторная работа</a>
     <ul class="navbar-links">
         <li><a class="navbar-link" href="/">Домой</a></li>
+
         <li><a class="navbar-link" href="/items">Товары</a></li>
-        <li><a class="navbar-link" href="/cashiers">Кассиры</a></li>
         <li><a class="navbar-link" href="/stores">Магазины</a></li>
-        <li><a class="navbar-link" href="/checks">Чеки</a></li>
+
+        {% if request.user.is_authenticated %}
+        <li><a class="navbar-link" href="/cashiers">Кассиры</a></li>
         <li><a class="navbar-link" href="/sales">Продажи</a></li>
+        <li><a class="navbar-link" href="/checks">Чеки</a></li>
+
+        <li><a class="navbar-link" href="/accounts/logout">Выход</a></li>
+        {% else %}
+        <li><a class="navbar-link" href="/accounts/login">Логин</a></li>
+        <li><a class="navbar-link" href="/register">Регистрация</a></li>
+        {% endif %}
     </ul>
 </nav>
+
 <div class="container">
 
     {% block content %}
     {% endblock %}
+
 </div>
+
 </body>
 </html>

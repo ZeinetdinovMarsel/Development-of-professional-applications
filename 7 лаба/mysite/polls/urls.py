@@ -7,6 +7,7 @@ from .views import (
     store_list, store_update, store_delete,
     check_list, check_update, check_delete,
     sale_list, sale_update, sale_delete,
+    register,
 )
 
 urlpatterns = [
@@ -31,5 +32,7 @@ urlpatterns = [
     path('sales/', sale_list, name='sale_list'),
     path('sales/<int:pk>/sales', sale_update, name='sale_update'),
     path('sales/<int:pk>/delete', sale_delete, name='sale_delete'),
+
+    path('register/', register, name='register'),
     
 ]

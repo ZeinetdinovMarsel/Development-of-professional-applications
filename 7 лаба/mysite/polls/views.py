@@ -2,7 +2,7 @@ from django.views.generic.edit import UpdateView, DeleteView
 from django.urls import reverse_lazy
 from django.shortcuts import render, get_object_or_404, redirect
 from .models import Item, Cashier, Store, Check, Sale
-from .forms import ItemForm, CashierForm, StoreForm, CheckForm, SaleForm
+from .forms import ItemForm, CashierForm, StoreForm, CheckForm, SaleForm,UserRegisterForm
 from django.views.generic import TemplateView
 
 
@@ -138,3 +138,9 @@ def sale_delete(request, pk):
         sale.delete()
         return redirect('sale_list')
     return render(request, 'confirm_delete.html', {'sale': sale})
+def register(request):
+    form = UserRegisterForm(request.POST or None)
+    if form.is_valid():
+        form.save()
+        return redirect('/accounts/login/')
+    return render(request, 'register.html', {'form': form})

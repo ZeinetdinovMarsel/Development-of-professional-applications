@@ -7,7 +7,9 @@
     <tr>
         <th>ID</th>
         <th>Название товара</th>
+        {% if request.user.is_staff == True %}
         <th>Действие</th>
+        {% endif %}
     </tr>
     </thead>
     <tbody>
@@ -15,10 +17,12 @@
     <tr>
         <td>{{ item.id }}</td>
         <td>{{ item.name }}</td>
+        {% if request.user.is_staff == True %}
         <td>
             <a class="btn" href="{% url 'item_update' item.pk %}">Изменить</a>
             <a class="btn" href="{% url 'item_delete' item.pk %}">Удалить</a>
         </td>
+        {% endif %}
     </tr>
     {% empty %}
     <tr>
@@ -28,10 +32,12 @@
     </tbody>
 </table>
 <hr>
+{% if request.user.is_staff == True %}
 <h3>Добавить новый товар</h3>
 <form method="post">
     {% csrf_token %}
     {{ form.as_p }}
     <button type="submit">Добавить</button>
 </form>
+{% endif %}
 {% endblock %}

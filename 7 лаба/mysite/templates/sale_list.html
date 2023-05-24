@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
+{% if request.user.is_authenticated %}
 <h2>Продажи</h2>
 <table>
     <thead>
@@ -8,7 +9,9 @@
         <th>Номер чека</th>
         <th>Наименование товара</th>
         <th>Количество</th>
+        {% if request.user.is_staff == True %}
         <th>Действие</th>
+        {% endif %}
     </tr>
     </thead>
     <tbody>
@@ -17,12 +20,14 @@
         <td>{{ sale.check_id }}</td>
         <td>{{ sale.item }}</td>
         <td>{{ sale.quantity }}</td>
+        {% if request.user.is_staff == True %}
         <td>
             <div class="edits">
                 <a class="btn" href="{% url 'sale_update' sale.pk %}">Изменить</a>
                 <a class="btn" href="{% url 'sale_delete' sale.pk %}">Удалить</a>
             </div>
         </td>
+        {% endif %}
     </tr>
     {% empty %}
     <tr>
@@ -32,10 +37,15 @@
     </tbody>
 </table>
 <hr>
+{% if request.user.is_staff == True %}
 <h3>Добавить новую продажу</h3>
-<form method="post">
+<form class="check-form" method="post">
     {% csrf_token %}
     {{ form.as_p }}
     <button type="submit">Добавить</button>
 </form>
+{% endif %}
+{% else %}
+<h1>Вы не авторизованы!</h1>
+{% endif %}
 {% endblock %}

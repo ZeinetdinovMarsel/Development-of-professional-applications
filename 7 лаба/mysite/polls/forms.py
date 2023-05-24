@@ -1,6 +1,7 @@
 from django import forms
 from .models import Item, Cashier, Store, Check, Sale
-
+from django.contrib.auth.models import User
+from django.contrib.auth.forms import UserCreationForm
 
 class ItemForm(forms.ModelForm):
     class Meta:
@@ -48,7 +49,6 @@ class CheckForm(forms.ModelForm):
                 'min': 0,
                 'max': 999999,
                 'decimal_places': 2,
-                'style': 'width: 100px;'
             })
         }
 
@@ -62,3 +62,9 @@ class SaleForm(forms.ModelForm):
             'item': 'Товар',
             'quantity': 'Количество',
         }
+class UserRegisterForm(UserCreationForm):
+    email = forms.EmailField()
+
+    class Meta:
+        model = User
+        fields = ['username', 'email', 'password1', 'password2']

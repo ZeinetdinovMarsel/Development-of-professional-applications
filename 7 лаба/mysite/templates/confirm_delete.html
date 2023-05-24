@@ -6,6 +6,7 @@
 <form method="post">
     {% csrf_token %}
     <button class="btn" type="submit">Да, уверен</button>
+    <a class="btn" class="btn" href="javascript:history.back()">Нет, оставить</a>
 </form>
-<a class="btn" class="btn" href="javascript:history.back()">Нет, оставить</a>
+
 {% endblock %}
