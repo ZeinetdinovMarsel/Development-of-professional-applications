@@ -50,56 +50,62 @@ class IndexPage(object):
         <html>
             <head>
                 <meta charset="utf-8">
-                <title>Лаба 6</title>
+                <title>Terribly Bad Design</title>
                 <style>
                     body {{
-                        font-family: Arial, sans-serif;
-                        background-color: #f2f2f2;
-                        color: #444;
-                        margin: 0;
-                        padding: 0;
+                        background-color: black;
+                        font-family: Comic Sans MS, cursive, sans-serif;
                     }}
                     h1 {{
-                        color: #777;
+                        color: yellow;
+                        font-size: 200px;
                         text-align: center;
-                        margin-top: 50px;
-                        font-size: 40px;
+                        text-shadow: -10px -10px 0 red, 10px -10px 0 red, -10px 10px 0 red, 10px 10px 0 red;
+                        background-image: url("https://i.imgur.com/Xxj2d6c.jpg");
+                        background-repeat: repeat;
+                        background-blur: 10px;
                     }}
                     table {{
                         margin: auto;
                         max-width: 800px;
                         width: 80%;
-                        box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
-                        border-collapse: collapse;
-                        margin-top: 50px;
+                        border-collapse: separate;
+                        border-spacing: 20px;
+                        background-color: magenta;
+                        transform: rotate(45deg);
+                        opacity: 0.5;
                     }}
                     td, th {{
-                        border: 1px solid #ddd;
-                        padding: 10px;
-                        text-align: center;
-                        font-size: 15px;
+                        padding: 50px;
+                        font-size: 50px;
+                        border: 30px dotted yellow;
+                        cursor: pointer;
+                        border-radius: 100px;
+                        box-shadow: inset 0px 0px 20px rgba(255, 0, 0, 0.75), 0px 0px 30px green, 0px 0px 50px blue;
+                        text-shadow: none;
                     }}
                     th {{
-                        background-color: #4CAF50;
-                        color: white;
+                        background-color: green;
+                        color: red;
                     }}
-                    tr , td{{
-                        transition: 0.2s ease-in-out;
+                    tr {{
+                        transition: transform 10s ease-in-out, opacity 5s ease;
                     }}
                     tr:hover {{
-                        transform: scale(1.05);
-                        background-color: #91cf93;
-                        cursor: pointer;
+                        transform: scale(5) rotate(-45deg);
+                        opacity: 1;
+                        background-color: yellow !important;
                     }}
                     td:hover {{
-                        color: white;
-                        transform: scale(1.05);
-                        background-color: #b4deb5;
+                        color: blue;
+                        background-image: url("https://i.imgur.com/IrV8oD9.jpg");
+                        background-repeat: repeat;
+                        text-shadow: 0px 0px 30px white;
                     }}
                 </style>
             </head>
             <body>
-                <h1>Лабораторная 6</h1>
+                <h1>BAD DESIGN</h1>
                 <table>
                     <tr>
                         {
